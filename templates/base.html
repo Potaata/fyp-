@@ -1,0 +1,198 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+   <!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{%static "img/Screenshot-logo.png" %}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{%static "css/all.min.css" %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{%static "bootstrap/css/bootstrap.min.css" %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{%static "css/owl.carousel.css" %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{%static "css/magnific-popup.css" %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{%static "css/animate.css" %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{%static "css/meanmenu.min.css" %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{%static "css/main.css" %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{%static "css/responsive.css" %}">
+      </head>
+  <body>
+    
+       
+      <!-- header -->
+      <div class="top-header-area" id="sticker">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12 col-sm-12 text-center">
+                      <div class="main-menu-wrap">
+                          <!-- logo -->
+                          <div class="site-logo">
+                                  <img src="{% static 'img/Screenshot-logo.png' %}" alt="" class="site-logo" >	
+                          </div>
+                          <!-- logo -->
+  
+                          <!-- menu start -->
+                          <nav class="main-menu">
+                            {% if user.is_authenticated %}
+                              <ul>
+                                  <li class="current-list-item"><a href="{% url 'home' %}">Home</a>
+                                      
+                                  </li>
+                                  <li><a href="/about">About</a></li>
+                                  
+                                  <li><a href="/profile">Profile</a>
+                                  </li>
+                                  
+                                  <li><a href="recipes.html">Recipes</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="recipes.html">All Recipes</a></li>
+                                          <li><a href="shop.html">My Recipes</a></li>
+                                          <li><a href="checkout.html">Add Recipe</a></li>
+                                          <li><a href="cart.html">Favourites</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <div class="header-icons">
+                                          <a class="shopping-cart" href="cart.html"><i class="fas fa-heart"></i></a>
+                                          <a class="shopping-cart" href="/profile"><i class="fa fa-user"></i></a>
+                                          <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                                      </div>
+                                  </li>
+                              </ul>
+                              {% else %}
+                              <ul>
+                                <li class="current-list-item"><a href="{% url 'home' %}">Home</a>
+                                    
+                                </li>
+                                <li><a href="/about">About</a></li>
+
+                                
+                                <li><a href="shop.html">Recipes</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="shop.html">All Recipes</a></li>
+                                        <li><a href="shop.html">My Recipes</a></li>
+                                        <li><a href="checkout.html">Add Recipe</a></li>
+                                        <li><a href="cart.html">Favourites</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="header-icons">
+                                        <a class="shopping-cart" href="cart.html"><i class="fas fa-heart"></i></a>
+                                        <a class="shopping-cart" href="/login"><i class="fa fa-user"></i></a>
+                                        <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                              {% endif %}
+                          </nav>
+                          <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                          <div class="mobile-menu"></div>
+                          <!-- menu end -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end header -->
+      	<!-- search area -->
+	<div class="search-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<span class="close-btn"><i class="fas fa-window-close"></i></span>
+					<div class="search-bar">
+						<div class="search-bar-tablecell">
+							<h3>Search For:</h3>
+							<input type="text" placeholder="Keywords">
+							<button type="submit">Search <i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end search area -->
+      <main>
+      {% block content %}
+        {% endblock content %}
+
+    </main> 
+        <!-- footer -->
+      <div class="footer-area">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-3 col-md-6">
+                      <div class="footer-box about-widget">
+                          <h2 class="widget-title">About us</h2>
+                          <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="footer-box get-in-touch">
+                          <h2 class="widget-title">Get in Touch</h2>
+                          <ul>
+                              <li>Kathmandu, Nepal</li>
+                              <li>yzunika@gmail.com</li>
+                              <li>+977 9860059267</li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="footer-box pages">
+                          <h2 class="widget-title">Pages</h2>
+                          <ul>
+                              <li><a href="{% url 'home' %}">Home</a></li>
+                              <li><a href="/about">About</a></li>
+                              <li><a href="/login">Profile</a></li>
+                              <li><a href="news.html">Recipes</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      <!-- end footer -->
+      <!-- copyright -->
+      <div class="copyright">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                      <p>Copyrights &copy; 2023 - <a>Yunika Shrestha</a>,  All Rights Reserved.<br>
+                      
+                      </p>
+                  </div>
+                  <div class="col-lg-6 text-right col-md-12">
+                      <div class="social-icons">
+                          <ul>
+                              <li><a href="https://www.facebook.com/yunikashrestha61" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                              <li><a href="https://www.instagram.com/yoonii_chan/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                              
+                              
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end copyright -->
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
+ {% endblock script %}  
+</body>
+    
