@@ -18,8 +18,11 @@ class Migration(migrations.Migration):
             name='Recipe',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
+                ('recipe_name', models.CharField(max_length=100)),
                 ('description', models.TextField()),
+                ('ingredients', models.TextField()),
+                ('servings', models.IntegerField(default=1)),
+                ('estimated', models.TextField(null=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'static',
     'templates',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +129,16 @@ STATICFILES_DIRS = [ BASE_DIR /"static", 'C:/Users/HP/Desktop/project/static',
 ]
 STATIC_URL = '/static/'
 
+#Media files
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+
 LOGIN_REDIRECT_URL = 'home.html'
 LOGIN_URL = 'login'
+
+#Default primary key
+DEFAULT_AUTO_FIELD='django.db.models.BigAutoField'
+
 
 

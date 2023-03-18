@@ -39,7 +39,9 @@
                       <div class="main-menu-wrap">
                           <!-- logo -->
                           <div class="site-logo">
-                                  <img src="{% static 'img/Screenshot-logo.png' %}" alt="" class="site-logo" >	
+                            <a href="{% url 'home' %}">
+								<img src="{% static 'img/Screenshot-logo.png' %}" alt="" class="site-logo">
+							</a>	
                           </div>
                           <!-- logo -->
   
@@ -55,11 +57,11 @@
                                   <li><a href="/profile">Profile</a>
                                   </li>
                                   
-                                  <li><a href="recipes.html">Recipes</a>
+                                  <li><a href="/recipes">Recipes</a>
                                       <ul class="sub-menu">
-                                          <li><a href="recipes.html">All Recipes</a></li>
-                                          <li><a href="shop.html">My Recipes</a></li>
-                                          <li><a href="checkout.html">Add Recipe</a></li>
+                                          <li><a href="/recipes">All Recipes</a></li>
+                                          <li><a href="/recipes-user">My Recipes</a></li>
+                                          <li><a href="/add-recipes">Add Recipe</a></li>
                                           <li><a href="cart.html">Favourites</a></li>
                                       </ul>
                                   </li>
@@ -79,17 +81,17 @@
                                 <li><a href="/about">About</a></li>
 
                                 
-                                <li><a href="shop.html">Recipes</a>
+                                <li><a href="/recipes">Recipes</a>
                                     <ul class="sub-menu">
-                                        <li><a href="shop.html">All Recipes</a></li>
-                                        <li><a href="shop.html">My Recipes</a></li>
-                                        <li><a href="checkout.html">Add Recipe</a></li>
-                                        <li><a href="cart.html">Favourites</a></li>
+                                        <li><a href="/recipes">All Recipes</a></li>
+                                        <li><a href="/recipes-user">My Recipes</a></li>
+                                        <li><a href="/add-recipes">Add Recipe</a></li>
+                                        <li><a href="/favourites">Favourites</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <div class="header-icons">
-                                        <a class="shopping-cart" href="cart.html"><i class="fas fa-heart"></i></a>
+                                        <a class="shopping-cart" href="/favourites"><i class="fas fa-heart"></i></a>
                                         <a class="shopping-cart" href="/login"><i class="fa fa-user"></i></a>
                                         <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                     </div>
@@ -136,7 +138,6 @@
                   <div class="col-lg-3 col-md-6">
                       <div class="footer-box about-widget">
                           <h2 class="widget-title">About us</h2>
-                          <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
                       </div>
                   </div>
                   <div class="col-lg-3 col-md-6">
@@ -156,7 +157,7 @@
                               <li><a href="{% url 'home' %}">Home</a></li>
                               <li><a href="/about">About</a></li>
                               <li><a href="/login">Profile</a></li>
-                              <li><a href="news.html">Recipes</a></li>
+                              <li><a href="/recipes">Recipes</a></li>
                           </ul>
                       </div>
                   </div>

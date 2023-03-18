@@ -1,3 +1,5 @@
+{% load crispy_forms_tags%}
+
 {% block content %}
 
 <!DOCTYPE html>
@@ -62,8 +64,9 @@
 	<!-- form -->
 	<div class="contact-from-section mt-150 mb-150">
 		<div class="container">
-			<div class="row d-flex justify-content-center align-items-center h-100">
-				<div class="col-lg-8 mb-5 mb-lg-0 text-center">
+			<div class="row justify-content-center align-items-center h-100">
+				<div class="mx-auto col-10 col-md-8 col-lg-6">
+					<div class="col-lg-8 mb-5 mb-lg-0 text-center">
 					<div class="form-title">
 						<h1>SIGN UP</h1>
 					</div>
@@ -72,13 +75,26 @@
 						<div class="container py-5">
 							<form method="POST">
 								{% csrf_token %}
-								{{ register_form}}                    
+
+								{{ register_form.username.label }} 
+								{{ register_form.username }}
+
+								{{ register_form.email.label }}
+								{{ register_form.email }}
+
+								{{ register_form.password1.label }}
+								{{ register_form.password1 }}
+
+								{{ register_form.password2.label }}
+								{{ register_form.password2 }}
+
 								<button class="btn btn-primary" type="submit">Register</button>
 							</form>
 							<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
 						</div>
 						
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>

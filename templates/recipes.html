@@ -36,8 +36,6 @@
 	<link rel="stylesheet" href="{%static "css/responsive.css" %}">
 </head>
 <body>
-
-	
 	<!-- header -->
 
 	<!-- search area -->
@@ -58,28 +56,35 @@
 	<!-- end breadcrumb section -->
 
 	<!-- featured section -->
-	
+	<div class="col-lg-4 col-md-6 text-center">
+		<div class="single-product-item">
+			
+		</div>
+	</div>
 		<div class="container">
-			
-				<div class="col-lg-7">
-					
-						<div class="row">
-                            {% for recipe in recipes %}
-							<div class="card my-4" style="width: 18rem">
-								<div class="card-body">
-			
-										<h3 class="card-title">{{ recipe.title }}</h3>
-                                        <h4 class="card-subtitle mb-2 text-muted">{{ recipe.author }}</h4>	
-                                        <p class="card-text">{{ recipe.description }}</p>			
-                                        <h4 class="card-subtitle mb-2 text-muted">{{ recipe.created_at|date:"F d, Y" }}</h4>
-                                        <a href="#" class="card-link">View Recipe</a>							
-								</div>
+			<div class="col-lg-7">
+				<div class="row">
+					{% for recipe in recipes %}
+						<div class="card my-4" style="width: 18rem">
+							<div>
+								{% if recipe.photo %}
+								<img class="product-image" src="{{ recipe.photo.url }}" alt=" Photo ">
+								{% endif %}	
 							</div>
-                            {% endfor %}
+							<div class="card-body">		
+								<h3 class="card-title">{{ recipe.recipe_name }}</h3>
+                                <h4 class="card-subtitle mb-2 text-muted"> - {{ recipe.author }}</h4>	
+                                <p class="card-text">{{ recipe.ingredients }}</p>
+								<p class="card-text">Servings - {{ recipe.servings }}</p>
+								<p class="card-text">{{ recipe.estimated }}</p>
+								<p class="card-text">{{ recipe.instructions }}</p>			
+                                <h4 class="card-subtitle mb-2 text-muted">{{ recipe.created_at|date:"F d, Y" }}</h4>
+								<a href="{% url 'recipes-detail' recipe.pk %}" class="cart-btn"><i class="far fa-eye"></i> View </a>					
+							</div>
 						</div>
-					
-				</div>
-			
+                        {% endfor %}
+				</div>					
+			</div>
 		</div>
 	
 	<!-- end featured section -->

@@ -1,14 +1,17 @@
-from django.shortcuts import  render, redirect
+from django.shortcuts import  render, redirect, get_object_or_404
 from .forms import NewUserForm
-from django.contrib.auth import login, authenticate
-from django.contrib import messages
+from django.contrib.auth import login, authenticate, logout
+from django.contrib import messages, auth
 from django.contrib.auth.forms import AuthenticationForm
-from django.views.generic import TemplateView
-from django.http import HttpResponse
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView, View
+from django.http import HttpResponse, Http404, HttpResponseRedirect, JsonResponse
+from django.urls import reverse_lazy
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from . import models
+from .models import Recipe
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from django.template import RequestContext
 
@@ -45,15 +48,10 @@ def login_request(request):
 	form = AuthenticationForm()
 	return render(request=request, template_name="login.html", context={"login_form":form})
 
-def logout(request):
-    output = _('You have been logged out!.')
-    messages.success(request, output)
-    return render('logout.html', context_instance=RequestContext(request))
-
 def about(request):
      return render(request, "about.html")
 
-def recipes(request):
+def recipe(request):
      recipes = models.Recipe.objects.all()
      context = {
           'recipes' : recipes
@@ -65,11 +63,66 @@ def recipes(request):
 def profile(request):
      return render(request, "profile.html")
 
-def logout(request):
-     return render(request, "logout.html")
+def logout_request(request):
+    logout(request)
+    messages.info(request, "You have successfully logged out.") 
+    return redirect('login')
+
+class RecipeListView(ListView):
+     model = models.Recipe
+     template_name = 'recipes.html'
+     context_object_name = 'recipes'
+
+class UserRecipeView(LoginRequiredMixin, ListView):
+     model = models.Recipe
+     template_name = 'user_recipe.html'
+     context_object_name = 'recipes'
+
+     def get_queryset(self):
+        return super(UserRecipeView, self).get_queryset().filter(author=self.request.user)
+
+class RecipeDetailView(DetailView):
+     model = models.Recipe
+     template_name = 'recipe_detail.html'
+     is_favourite = False
+    
+
+class RecipeCreateView(LoginRequiredMixin, CreateView):
+     model = models.Recipe
+     fields = ['recipe_name', 'photo', 'ingredients', 'servings', 'estimated', 'description']
+     template_name = 'add_recipe.html'
+
+     def form_valid(self, form):
+          form.instance.author = self.request.user
+          return super().form_valid(form)
+
+class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+     model = models.Recipe
+     fields = ['recipe_name', 'ingredients', 'servings', 'estimated', 'description']
+     template_name = 'add_recipe.html'
+
+     def test_func(self):
+      recipe = self.get_object()
+      return self.request.user == recipe.author
+    
+     def form_valid(self, form):
+          form.instance.author = self.request.user
+          return super().form_valid(form)
+     
+class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+     model = models.Recipe
+     success_url = reverse_lazy('recipes')
+     template_name = 'recipe_delete.html'
+
+     def test_func(self):
+      recipe = self.get_object()
+      return self.request.user == recipe.author
+
+
+
 
 def ingredientView(request):
-    all_ingredients = ingredientItem.objects.all()
+    all_ingredients = models.Ingredients.objects.all()
     return render(request, 'ingredient.html', {'all_ingredients': all_ingredients})
 
 #view for search recipe page

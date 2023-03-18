@@ -1,0 +1,27 @@
+<div class="contact-from-section mt-150 mb-150">
+	<div class="container">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-lg-8 mb-5 mb-lg-0 text-center">
+                <div class="form-title">
+                    <h1>Are you sure you want to delete {{object}}?</h1>
+                </div><div id="form_status"></div>
+				<div class="form">
+					<div class="container py-5">
+						<form method="POST">
+							{% csrf_token %}
+                        <fieldset class="form-group">
+							{{ form }}   
+                        </fieldset>     
+                        <div class="form-group py-3">            
+							<input class="btn btn-outline-danger" type="submit" value="Delete"></input>
+						</div>
+                    </form>
+					</div>	
+					<div class="border-top pt-3">
+						<a href="{% url 'recipes' %}" >Cancel</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
