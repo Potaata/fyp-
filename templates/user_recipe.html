@@ -56,58 +56,63 @@
 	<!-- end breadcrumb section -->
 
 	<!-- featured section -->
-	
+
+	<div class="product-section mt-150 mb-150">
 		<div class="container">
-			<div class="col-lg-7">
-				<div class="row">
-                        {% for recipe in recipes %}
-						<div class="card my-4" style="width: 18rem">
-							<div class="card-body">	
-								<div>
-									{% if recipe.photo %}
-									<img class="w-20 border rounded-full mr-4" src="{{ recipe.photo.url }}" alt=" Photo ">
-									{% endif %}	
-								</div>	
-								<h3 class="card-title">{{ recipe.recipe_name }}</h3>
-                                <h4 class="card-subtitle mb-2 text-muted"> - {{ recipe.author }}</h4>	
-                                <p class="card-text">{{ recipe.ingredients }}</p>
-								<p class="card-text">Servings - {{ recipe.servings }}</p>
-								<p class="card-text">{{ recipe.estimated }}</p>
-								<p class="card-text">{{ recipe.instructions }}</p>			
-                                <h4 class="card-subtitle mb-2 text-muted">{{ recipe.created_at|date:"F d, Y" }}</h4>
-								<a href="{% url 'recipes-detail' recipe.pk %}" class="cart-btn"><i class="far fa-eye"></i> View </a>					
-							</div>
+			<div class="row">
+				{% for recipe in recipes %}
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							{% if recipe.photo %}
+							<img class="product-image" src="{{ recipe.photo.url }}" alt=" Photo ">
+							{% endif %}	
 						</div>
-                        {% endfor %}
-				</div>					
+						<div class="card-body">		
+							<h3 class="card-title">{{ recipe.recipe_name }}</h3>
+							<h4 class="card-subtitle mb-2 text-muted"> - {{ recipe.author }}</h4>
+						</div>	
+						<ul class="list-group list-group-flush">
+							<li class="card-text list-group-item">Servings - {{ recipe.servings }}</li>
+							<li class="card-text list-group-item">{{ recipe.estimated }}</li>
+							
+						</br>			
+							<h4 class="card-subtitle mb-2 text-muted ">{{ recipe.created_at|date:"F d, Y" }}</h4>
+						</ul>
+						</br>
+							<a href="{% url 'recipes-detail' recipe.pk %}" class="cart-btn"><i class="far fa-eye"></i> View </a>	
+					</div>
+				</div>
+				{% endfor %}
+			
 			</div>
 		</div>
-	
+	</div>
 	<!-- end featured section -->
 
 	<!-- footer -->
 	
 	<!-- copyright -->
 
-	<!-- jquery -->
+	<!-- jquery javascript-->
 	<script src="{%static "js/jquery-1.11.3.min.js" %}"></script>
-	<!-- bootstrap -->
+	
 	<script src="{%static "bootstrap/js/bootstrap.min.js" %}"></script>
-	<!-- count down -->
+	
 	<script src="{%static "js/jquery.countdown.js" %}"></script>
-	<!-- isotope -->
+	
 	<script src="{%static "js/jquery.isotope-3.0.6.min.js" %}"></script>
-	<!-- waypoints -->
+	<
 	<script src="{%static "js/waypoints.js" %}"></script>
-	<!-- owl carousel -->
+	
 	<script src="{%static "js/owl.carousel.min.js" %}"></script>
-	<!-- magnific popup -->
+	
 	<script src="{%static "js/jquery.magnific-popup.min.js" %}"></script>
-	<!-- mean menu -->
+	
 	<script src="{%static "js/jquery.meanmenu.min.js" %}"></script>
-	<!-- sticker js -->
+	
 	<script src="{%static "js/sticker.js" %}"></script>
-	<!-- main js -->
+	
 	<script src="{%static "js/main.js" %}"></script>
 
 </body>

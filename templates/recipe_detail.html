@@ -48,7 +48,7 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						
+						<p>See more for</p>
 						<h1>{{ object.recipe_name }} </h1>
 					</div>
 				</div>
@@ -56,48 +56,49 @@
 		</div>
 	</div>
 	<!-- end breadcrumb section -->
+					{% for message in messages %}
+					  {% if message.tags == 'success' %}
+						<li class="{{ message.tags }}">{{ message }}</li>
+					  {% endif %}
+					{% endfor %}
+		<div class="single-product mt-150 mb-150">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<div class="single-product-img">
+						</br></br></br>
+						{% if recipe.photo %}
+						<img class="w-20 border rounded-full mr-4" src="{{ recipe.photo.url }}" alt=" Photo ">
+						{% endif %}	
+						</div>	
+					</div>
+					</br>
+					<div class="col-md-7">
+						<div class="single-product-content">
+						<h3 class="card-title">{{ recipe.recipe_name }}</h3>
+						<h4 class="card-subtitle mb-2 text-muted">- {{ recipe.author }}</h4>	
+						</br>
+						{% for ingredients in recipe.ingredients.all %}
+							<h5 class="card-text">Ingredients - {{ ingredients }}</h5>
+						{% endfor %}
+						<h5 class="card-text">Servings - {{ recipe.servings }}</h5>
+						<h5 class="card-text">Estimated Time - {{ recipe.estimated }}</h5>
+						<h5 class="card-text">{{ recipe.description }}</h5>			
+						<h4 class="card-subtitle mb-2 text-muted">{{ recipe.created_at|date:"F d, Y" }}</h4>
+						{% if object.author == user or user.is_staff %}
+					</br></br>
+						<div class="d-grid gap-2 d-md-block">
+							<a class="cart-btn" href="{% url 'recipes-update' object.id %}">Update</a>
+							<a class="cart-btn" href="{% url 'recipes-delete' object.id %}">Delete</a>
+						{% endif %}
+							<a class="cart-btn"  href="{% url 'user_favourites' object.id %}"><i class="far fa-heart"></i>Favourites</a>
 
-	<!-- featured section -->
-	
-		<div class="container">
-			
-				<div class="col-lg-7">
-					<div class="row">
-                            
-							<div class="card my-4" style="width: 18rem">
-								<div class="card-body">
-									<div>
-										{% if recipe.photo %}
-										<img class="w-20 border rounded-full mr-4" src="{{ recipe.photo.url }}" alt=" Photo ">
-										{% endif %}	
-									</div>
-									<h3 class="card-title">{{ recipe.recipe_name }}</h3>
-									<h4 class="card-subtitle mb-2 text-muted">{{ recipe.author }}</h4>	
-									<p class="card-text">{{ recipe.ingredients }}</p>
-									<p class="card-text">{{ recipe.servings }}</p>
-									<p class="card-text">{{ recipe.estimated }}</p>
-									<p class="card-text">{{ recipe.description }}</p>			
-									<h4 class="card-subtitle mb-2 text-muted">{{ recipe.created_at|date:"F d, Y" }}</h4>
-								</div>
-							</div> 
-							{% if request.user.is_authenticated %}
-							<div>
-								<a href ="#" class="far fa-heart" class="favourite-btn" data-recipe-id="{{ recipe.id}}">Add to Favourites</a>
-							</div>
-							{% endif %}
-							<div>
-							</div>
-							{% if object.author == user or user.is_staff %}
-								<div class="col-4">
-									<a class="btn" href="{% url 'recipes-update' object.id %}">Update</a>
-									<a class="btn btn-outline-danger" href="{% url 'recipes-delete' object.id %}">Delete</a>
-								
-								</div>
-							{% endif %}
-					</div>	
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		
+		</div>	
+	
 		
 	<!-- end featured section -->
 
@@ -105,49 +106,28 @@
 	
 	<!-- copyright -->
 
-	<!-- jquery -->
+	<!-- jquery javascript-->
 	<script src="{%static "js/jquery-1.11.3.min.js" %}"></script>
-	<!-- bootstrap -->
+	
 	<script src="{%static "bootstrap/js/bootstrap.min.js" %}"></script>
-	<!-- count down -->
+	
 	<script src="{%static "js/jquery.countdown.js" %}"></script>
-	<!-- isotope -->
+	
 	<script src="{%static "js/jquery.isotope-3.0.6.min.js" %}"></script>
-	<!-- waypoints -->
+	
 	<script src="{%static "js/waypoints.js" %}"></script>
-	<!-- owl carousel -->
+	
 	<script src="{%static "js/owl.carousel.min.js" %}"></script>
-	<!-- magnific popup -->
+	
 	<script src="{%static "js/jquery.magnific-popup.min.js" %}"></script>
-	<!-- mean menu -->
+	
 	<script src="{%static "js/jquery.meanmenu.min.js" %}"></script>
-	<!-- sticker js -->
+	
 	<script src="{%static "js/sticker.js" %}"></script>
-	<!-- main js -->
+
 	<script src="{%static "js/main.js" %}"></script>
 
 </body>
 </html>
 {% endblock %}
 
-{% block javascript %}
-{% csrf_token %}
-<script>
-	$(document).ready(function() {
-		$('.favourite-btn').click(function() {
-			var recipeId = $(this).data('recipe-id');
-			$.ajax({
-				url: '/favourite/' + recipeId + '/',
-				method: 'POST',
-				success: function(data) {
-					if (data.created) {
-						alert('Item bookmarked!');
-					} else {
-						alert('Item already bookmarked!');
-					}
-				}
-			});
-		});
-	});
-</script>
-{% endblock javascript %}

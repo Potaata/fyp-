@@ -57,58 +57,110 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-<!-- form -->
-<div class="contact-from-section mt-150 mb-150">
-	<div class="container">
-		<div class="row">
-			<div class="mx-auto col-10 col-md-8 col-lg-6">
-			<div class="col-lg-8 mb-5 mb-lg-0 text-center">
-				
-				<div class="form">
-					<div class="container py-5">
-						<form method="POST" enctype="multipart/form-data">
-							{% csrf_token %}
-							{{ form }}   
-						<p></p>                 
-							<button class="btn btn-primary" type="submit">Post</button>
-						</form>
-					</div>	
-					<div class="border-top pt-3">
-						<a href="{% url 'recipes' %}" >Cancel</a>
+	<!-- form -->
+		<div class="contact-from-section mt-150 mb-150">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="checkout-accordion-wrap">
+							<div class="accordion" id="accordionExample">
+								<div class="card single-accordion">
+									<div class="card-header" id="headingOne">
+										<h5 class="mb-0">
+											<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											Recipe Details
+											</button>
+										</h5>
+									</div>	
+									<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+										<div class="card-body">
+											<div class="billing-address-form">	
+												<div class="form">
+									
+													{% if submitted %}
+													Your Recipe was submitted Successfully!!
+												
+													{% else %}
+
+													<form action="" method="post" enctype="multipart/form-data">
+														{% csrf_token %}
+
+														{{ form.as_p}}
+													
+													<br/>              
+														<button class="btn btn-light" type="submit" value="submit">Post</button>
+													</form>
+													
+												
+													{% endif %}
+												</div>	
+												<div class="border-top pt-3">
+													<a href="{% url 'recipes' %}" >Cancel</a>
+												</div>
+											</div>								
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="contact-form-wrap">
+							<div class="contact-form-box">
+								<div class="product-image">
+									<img src=" {% static "img/omelette.jpg" %}" width=150 height=250 class="img-fluid rounded-start" alt="Profile Image">
+								</div>
+								<h3>Omelete</h3>
+							</div>
+							<div class="contact-form-box">
+								<div class="product-image">
+									<img src=" {% static "img/Italian-Pizza.jpg" %}" width=150 height=200 class="img-fluid rounded-start" alt="Profile Image">
+
+								</div>
+								<h3>Pizza</h3>
+								
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>
-	</div>
-</div>
+
 <!-- end form -->
 
 	<!-- footer -->
 	
 	<!-- copyright -->
 
-	<!-- jquery -->
+	<!-- jquery javascript-->
 	<script src="{%static "js/jquery-1.11.3.min.js" %}"></script>
-	<!-- bootstrap -->
+	
 	<script src="{%static "bootstrap/js/bootstrap.min.js" %}"></script>
-	<!-- count down -->
+	
 	<script src="{%static "js/jquery.countdown.js" %}"></script>
-	<!-- isotope -->
+	
 	<script src="{%static "js/jquery.isotope-3.0.6.min.js" %}"></script>
-	<!-- waypoints -->
+	
 	<script src="{%static "js/waypoints.js" %}"></script>
-	<!-- owl carousel -->
+	
 	<script src="{%static "js/owl.carousel.min.js" %}"></script>
-	<!-- magnific popup -->
+	
 	<script src="{%static "js/jquery.magnific-popup.min.js" %}"></script>
-	<!-- mean menu -->
+	
 	<script src="{%static "js/jquery.meanmenu.min.js" %}"></script>
-	<!-- sticker js -->
-	<script src="{%static "js/sticker.js" %}"></script>
-	<!-- main js -->
-	<script src="{%static "js/main.js" %}"></script>
 
+	<script src="{%static "js/sticker.js" %}"></script>
+	
+	<script src="{%static "js/main.js" %}"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" integrity="sha512-+2V8hWfOz7STO+An/5wGJf3Wq5J5AX6pYX6tlbUq3fP/XZ+kU6srBb/xwQll6zwfnkt6yB1nHTdXZquT1AyzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+						<script>
+						  $(function() {
+							$('.select2').select2();
+						  });
+						</script>
 </body>
 </html>
 {% endblock %}

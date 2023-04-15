@@ -10,6 +10,7 @@ Description: Bootstrap template for fruits or any other kind of shop
 
 ----------------------------------------------------------------------------- */
 html {
+  font-family: "Monaco", monospace;
   font-size: 14px;
   font-weight: 400;
   line-height: 28px;
@@ -17,7 +18,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Monaco", monospace;
   font-weight: 400;
   font-size: 1rem;
   letter-spacing: 0.1px;
@@ -50,7 +51,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Monaco", monospace;
   font-weight: 700;
   margin: 0 0 1.25rem 0;
   color: #051922;
@@ -66,6 +67,7 @@ h6:last-child, .h6:last-child {
 }
 
 h1, .h1 {
+  font-family: "Monaco", monospace;
   font-size: 4rem;
   font-weight: 700;
   line-height: 4rem;
@@ -73,6 +75,7 @@ h1, .h1 {
 
 @media only screen and (max-width: 767.96px) {
   h1, .h1 {
+    font-family: "Monaco", monospace;
     font-size: 3rem;
     line-height: 3.25rem;
   }
@@ -80,12 +83,14 @@ h1, .h1 {
 
 @media only screen and (max-width: 575.96px) {
   h1, .h1 {
+    font-family: "Monaco", monospace;
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
 }
 
 h2, .h2 {
+  font-family: "Monaco", monospace;
   font-size: 3rem;
   font-weight: 700;
   line-height: 3.25rem;
@@ -93,6 +98,7 @@ h2, .h2 {
 
 @media only screen and (max-width: 767.96px) {
   h2, .h2 {
+    font-family: "Monaco", monospace;
     font-size: 2.5rem;
     line-height: 2.75rem;
   }
@@ -100,12 +106,14 @@ h2, .h2 {
 
 @media only screen and (max-width: 575.96px) {
   h2, .h2 {
+    font-family: "Monaco", monospace;
     font-size: 2rem;
     line-height: 2.25rem;
   }
 }
 
 h3, .h3 {
+  font-family: "Monaco", monospace;
   font-size: 2rem;
   font-weight: 700;
   line-height: 2.25rem;
@@ -113,12 +121,14 @@ h3, .h3 {
 
 @media only screen and (max-width: 575.96px) {
   h3, .h3 {
+    font-family: "Monaco", monospace;
     font-size: 1.75rem;
     line-height: 2rem;
   }
 }
 
 h4, .h4 {
+  font-family: "Monaco", monospace;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.75rem;
@@ -127,25 +137,29 @@ h4, .h4 {
 
 @media only screen and (max-width: 575.96px) {
   h4, .h4 {
+    font-family: "Monaco", monospace;
     font-size: 1.25rem;
     line-height: 1.5rem;
   }
 }
 
 h5, .h5 {
+  font-family: "Monaco", monospace;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.5rem;
 }
 
 h6, .h6 {
+  font-family: "Monaco", monospace;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.5rem;
+
 }
 
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Monaco", monospace;
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.1px;
@@ -165,21 +179,18 @@ p:last-child {
 ----------------------------------------------------------------------------- */
 
 .bg-image-vertical {
-position: relative;
-overflow: hidden;
-background-repeat: no-repeat;
-background-position: center;
-background-size: auto 100%;
-max-height: 200px;
-border-radius: 60%;
-padding-top: 1cm;
-}
-    
-@media (min-width: 1025px) {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+  }
+  
+  @media (min-width: 1025px) {
   .h-custom-2 {
   height: 100%;
-}
-}
+  }
+  }
 
 .loader {
   bottom: 0;
@@ -439,7 +450,7 @@ padding-top: 1cm;
 }
 
 a.boxed-btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Monaco", monospace;
   display: inline-block;
   background-color: #F28123;
   color: #fff;
@@ -447,7 +458,7 @@ a.boxed-btn {
 }
 
 a.bordered-btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Monaco", monospace;
   display: inline-block;
   color: #fff;
   border: 2px solid #F28123;
@@ -539,7 +550,7 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
   width: 100%;
   height: 100%;
   content: "";
-  background-color: #07212e;
+  background-color: #1d2f36;
   z-index: -1;
   opacity: 0.8;
 }
@@ -2141,6 +2152,13 @@ a.video-play-btn {
 # Shop Banner Styles
 
 ----------------------------------------------------------------------------- */
+.profile-recipe{
+  position: relative;
+  background-color: #f5f5f5;
+  background-size: cover;
+  padding: 110px 0px 115px;
+}
+
 .shop-banner {
   position: relative;
   background-color: #f5f5f5;
@@ -2452,7 +2470,7 @@ ul.social-link-team li a {
 }
 
 p.product-price {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Monaco", monospace;
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -2466,7 +2484,7 @@ p.product-price span {
 }
 
 a.cart-btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Monaco", monospace;
   display: inline-block;
   background-color: #F28123;
   color: #fff;
@@ -2710,7 +2728,7 @@ tr.total-data td strong {
   left: 20px;
   top: 50%;
   content: "\f058";
-  font-family: "Font Awesome 5 Free";
+  font-family: "Monaco", monospace;
   font-weight: 900;
   line-height: 22px;
   margin-top: -11px;
@@ -2747,40 +2765,417 @@ table.order-details tbody td {
 
 .single-product-item {
   -webkit-box-shadow: 0 0 20px #e4e4e4;
-  box-shadow: 0 0 20px #e4e4e4;
+ box-shadow: 0 0 20px #e4e4e4;
   padding-bottom: 50px;
   border-radius: 5px;
 }
-
+ 
 /* -----------------------------------------------------------------------------
 
-# 404 Page Styles
+# login Styles
 
 ----------------------------------------------------------------------------- */
-.error-text i {
-  font-size: 90px;
-  margin-bottom: 30px;
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
 }
 
-.error-text h1 {
-  font-size: 40px;
-  font-weight: 500;
-  margin-bottom: 10px;
+textarea {
+  outline: none;
+  border: none;
 }
 
-.error-text p {
-  font-size: 15px;
-  margin-bottom: 30px;
+textarea:focus, input:focus {
+  border-color: transparent !important;
 }
 
-.full-height-section {
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #555555;}
+input:-moz-placeholder { color: #555555;}
+input::-moz-placeholder { color: #555555;}
+input:-ms-input-placeholder { color: #555555;}
+
+textarea::-webkit-input-placeholder { color: #555555;}
+textarea:-moz-placeholder { color: #555555;}
+textarea::-moz-placeholder { color: #555555;}
+textarea:-ms-input-placeholder { color: #555555;}
+
+label {
+  margin: 0;
+  display: block;
+}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+.txt1 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  color: #e5e5e5;
+  line-height: 1.5;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ login ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-login100 {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;  
+}
+
+.container-login100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
   height: 100%;
-  display: table;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.65);
+}
+
+.wrap-login100 {
+  width: 390px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: transparent;
+}
+
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.login100-form {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.login100-form-logo {
+  font-size: 60px; 
+  color: #333333;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.login100-form-title {
+  font-family: Ubuntu-Bold;
+  font-size: 28px;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+
+  display: block;
+}
+
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 29px 0;
+}
+
+.input100 {
+  font-family: Ubuntu-Regular;
+  font-size: 20px;
+  color: #555555;
+  line-height: 1.2;
+
+  display: block;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  padding: 0 10px 0 80px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+/*---------------------------------------------*/ 
+.focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  background: #d41872;
+  background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);
+  background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
+  background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
+  background: linear-gradient(left, #a445b2, #d41872, #fa4299);
+}
+
+.focus-input100::after {
+  font-family: Linearicons-Free;
+  font-size: 18px;
+  color: #999999;
+
+  content: attr(data-placeholder);
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  left: 35px;
+ 
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input100:focus {
+  padding-left: 60px;
+}
+
+.input100:focus + .focus-input100::after {
+  left: 23px;
+  color: #d41872;
+}
+
+.input100:focus + .focus-input100::before {
   width: 100%;
 }
 
-.full-height-tablecell {
-  display: table-cell;
-  vertical-align: middle;
+.has-val.input100 + .focus-input100::after {
+  left: 23px;
+  color: #d41872;
+}
+
+.has-val.input100 + .focus-input100::before {
   width: 100%;
 }
+
+.has-val.input100 {
+  padding-left: 60px;
+}
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-login100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login100-form-btn {
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 42px;
+  border-radius: 21px;
+
+  background: #d41872;
+  background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);
+  background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
+  background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
+  background: linear-gradient(left, #a445b2, #d41872, #fa4299);
+  position: relative;
+  z-index: 1;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 21px;
+  background-color: #555555;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn:hover {
+  background-color: transparent;
+}
+
+.login100-form-btn:hover:before {
+  opacity: 1;
+}
+
+
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+
+.alert-validate::before {
+  content: attr(data-validate);
+  position: absolute;
+  max-width: 70%;
+  background-color: #fff;
+  border: 1px solid #c80000;
+  border-radius: 2px;
+  padding: 4px 25px 4px 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 10px;
+  pointer-events: none;
+
+  font-family: Ubuntu-Bold;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.alert-validate::after {
+  content: "\f12a";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #c80000;
+
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 15px;
+}
+
+.alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+

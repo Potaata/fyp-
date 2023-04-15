@@ -1,6 +1,7 @@
-{% load crispy_forms_tags%}
 
-{% block content %}
+{% block content %} 
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,113 +38,126 @@
 
 </head>
 <body>
-
-		<!-- header -->
-		<div class="top-header-area" id="sticker">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-sm-12 text-center">
-						<div class="main-menu-wrap">
-							<!-- logo -->
-							<div class="site-logo">
-								<a href="{% url 'home' %}">
-									<img src="{% static 'img/Screenshot-logo.png' %}" alt="" class="site-logo">
-								</a>
-							</div>
-							<!-- logo -->
-	
-							
-						</div>
-					</div>
-				</div>
-			</div>
+<!-- Section: Design Block -->
+<section class="text-center">
+	<!-- Background image -->
+	<div class="p-5 bg-image" style="
+		  background-image: url('https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		  height: 300px;
+		  "></div>
+	<!-- Background image -->
+  
+	<div class="card w-50 mx-auto shadow-5-strong" style="
+		  margin-top: -100px;
+		  background: hsla(0, 0%, 100%, 0.8);
+		  backdrop-filter: blur(30px);
+		  ">
+	  <div class="card-body py-5 ">
+  
+		<div class="row d-flex justify-content-center">
+		  <div class="col-lg-8">
+			<h2 class="fw-bold mb-5">Sign up now</h2>
+			
+			  <form method="POST">
+										
+				{% csrf_token %}
+				{{ register_form }} 
+			</br></br>
+				<button class="btn btn-light" type="submit">Register</button>
+			
+		</br></br></br>
+			<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+			  <!-- Register buttons -->
+			  <div class="text-center">
+				<p>or sign up with:</p>
+				<button type="button" class="btn btn-light btn-floating mx-1">
+				  <i class="fab fa-facebook-f"></i>
+				</button>
+  
+				<button type="button" class="btn btn-light btn-floating mx-1">
+				  <i class="fab fa-google"></i>
+				</button>
+  
+				<button type="button" class="btn btn-light btn-floating mx-1">
+				  <i class="fab fa-twitter"></i>
+				</button>
+  
+				<button type="button" class="btn btn-light btn-floating mx-1">
+				  <i class="fab fa-github"></i>
+				</button>
+			  </div>
+			</form>
+		  </div>
 		</div>
-		<!-- end header -->
-
-
+	  </div>
+	</div>
+  </section>
+  <!-- Section: Design Block -->
+	
 	<!-- form -->
-	<div class="contact-from-section mt-150 mb-150">
+	<!-- <div class="contact-from-section mt-150 mb-150">
 		<div class="container">
 			<div class="row justify-content-center align-items-center h-100">
 				<div class="mx-auto col-10 col-md-8 col-lg-6">
 					<div class="col-lg-8 mb-5 mb-lg-0 text-center">
-					<div class="form-title">
-						<h1>SIGN UP</h1>
-					</div>
-				 	<div id="form_status"></div>
-					<div class="form">
-						<div class="container py-5">
-							<form method="POST">
-								{% csrf_token %}
-
-								{{ register_form.username.label }} 
-								{{ register_form.username }}
-
-								{{ register_form.email.label }}
-								{{ register_form.email }}
-
-								{{ register_form.password1.label }}
-								{{ register_form.password1 }}
-
-								{{ register_form.password2.label }}
-								{{ register_form.password2 }}
-
-								<button class="btn btn-primary" type="submit">Register</button>
-							</form>
-							<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+						<div class="form-title"></br>
+							<h1>SIGN UP</h1>
 						</div>
-						
-					</div>
+						<div class="single-product-item">
+							<div class="form">
+								<div class="container py-5">
+									
+									<form method="POST">
+										
+										{% csrf_token %}
+										{{ register_form.username.label  }} 
+										{{ register_form.username  }}
+								
+										{{ register_form.email.label  }}
+										{{ register_form.email  }}
+									
+										{{ register_form.password1.label  }}
+										{{ register_form.password1  }}
+									
+										{{ register_form.password2.label  }}
+										{{ register_form.password2 }}
+									</br>
+										<button class="btn btn-primary" type="submit">Register</button>
+									</form>
+								</br>
+									<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+								</div>
+							</div>
+								
+						</div>
 				</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end form -->
+	end form -->
 
-	<!-- copyright -->
-	<div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2023 - <a>Yunika Shrestha</a>,  All Rights Reserved.<br>
-					
-					</p>
-				</div>
-				<div class="col-lg-6 text-right col-md-12">
-					<div class="social-icons">
-						<ul>
-							<li><a href="https://www.facebook.com/yunikashrestha61" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="https://www.instagram.com/yoonii_chan/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							
-							
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end copyright -->
+	
 
-	<!-- jquery -->
+	<!-- jquery javascript-->
 	<script src="{%static "js/jquery-1.11.3.min.js" %}"></script>
-	<!-- bootstrap -->
+
 	<script src="{%static "bootstrap/js/bootstrap.min.js" %}"></script>
-	<!-- count down -->
+
 	<script src="{%static "js/jquery.countdown.js" %}"></script>
-	<!-- isotope -->
+	
 	<script src="{%static "js/jquery.isotope-3.0.6.min.js" %}"></script>
-	<!-- waypoints -->
+
 	<script src="{%static "js/waypoints.js" %}"></script>
-	<!-- owl carousel -->
+
 	<script src="{%static "js/owl.carousel.min.js" %}"></script>
-	<!-- magnific popup -->
+
 	<script src="{%static "js/jquery.magnific-popup.min.js" %}"></script>
-	<!-- mean menu -->
+
 	<script src="{%static "js/jquery.meanmenu.min.js" %}"></script>
-	<!-- sticker js -->
+
 	<script src="{%static "js/sticker.js" %}"></script>
-	<!-- main js -->
+	
 	<script src="{%static "js/main.js" %}"></script>
 	
 </body>
